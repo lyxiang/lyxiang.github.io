@@ -8,18 +8,18 @@ menu: 链接
 permalink: /links/
 ---
 
-> God made relatives. Thank God we can choose our friends.
+> 优质博客：
 
 {% for link in site.data.links %}
-  {% if link.src == 'life' %}
+  {% if link.src == 'www' %}
 * [{{ link.name }}]({{ link.url }})
   {% endif %}
 {% endfor %}
 
-> 友情链接
+> 生活
 
 {% for link in site.data.links %}
-  {% if link.src == 'www' %}
+  {% if link.src == 'life' %}
 * [{{ link.name }}]({{ link.url }})
   {% endif %}
 {% endfor %}

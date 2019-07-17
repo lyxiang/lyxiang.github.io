@@ -1,0 +1,52 @@
+---
+layout:     post
+title:      "SpringBoot四大神器之Starter"
+subtitle:   "SpringBoot"
+date:       2018-12-31 12:00:00
+author:     "lyxiang"
+header-img: "img/post-bg-2015.jpg"
+catalog: true
+tags:
+    - java
+---
+
+
+<p id = "build"></p>
+
+# 并发加锁
+
+## 场景描述
+	在电商系统中，当商品的库存仅剩一个，有10个用户同时下单，会出现超卖的情况。用户查询的时候，库存都是1，然后做减库存操作，这个时候，就会发生超卖。
+## 悲观锁
+* 悲观锁，是指对数据被外界修改持有保守态度。在数据处理的过程中，将数据锁起来。依靠数据库提供的锁机制来实现。
+* 使用悲观锁的时候，要关闭mysql的自动提交属性。set autocommit=0;
+* 行锁：指定列有索引, 锁当前的行
+* 表锁：指定列没有索引, 锁整个表
+* select for update,才会收到影响。select操作不会受到影响。
+```
+//开始事务
+begin;/begin work;/start transaction; (三者选一就可以)
+
+//查询出商品信息
+select status from t_goods where id=1 for update;
+
+//根据商品信息生成订单
+insert into t_orders (id,goods_id) values (null,1);
+
+//修改商品status为2
+update t_goods set status=2;
+
+//提交事务
+commit;/commit work;
+```
+
+## 乐观锁
+* 乐观锁一般认为数据不会冲突，在更新的时候，才会去检查数据是否被修改过。如果修改过，则返回错误信息，让用户去决定怎么做。
+
+### 实现机制
+* 数据版本记录实现：这是乐观锁最常用的一种实现方式。何谓数据版本？即为数据增加一个版本标识，一般是通过为数据库表增加一个数字类型的 “version” 字段来实现。当读取数据时，将version字段的值一同读出，数据每更新一次，对此version值加一。当我们提交更新的时候，判断数据库表对应记录的当前版本信息与第一次取出来的version值进行比对，如果数据库表当前版本号与第一次取出来的version值相等，则予以更新，否则认为是过期数据。
+
+* 乐观锁定的第二种实现方式和第一种差不多，同样是在需要乐观锁控制的table中增加一个字段，名称无所谓，字段类型使用时间戳（timestamp）, 和上面的version类似，也是在更新提交的时候检查当前数据库中数据的时间戳和自己更新前取到的时间戳进行对比，如果一致则OK，否则就是版本冲突。
+
+## redis分布式锁
+* 利用redis的setnx来实现分布式锁。
