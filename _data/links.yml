@@ -5,3 +5,7 @@
 - name: Hollis
   url: https://www.hollischuang.com/
   src: www
+
+- name: 默沙东诊疗手册
+  url: https://www.msdmanuals.cn/%E9%A6%96%E9%A1%B5
+  src: life
