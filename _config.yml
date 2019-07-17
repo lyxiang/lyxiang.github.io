@@ -2,7 +2,7 @@
 #   Main Configs   #
 # ---------------- #
 baseurl:
-url: http://lyxiang.github.io/
+url: http://lyxiang.github.io
 date_format: "ordinal"
 title: lyxiang
 subtitle: "自律给我自由"
