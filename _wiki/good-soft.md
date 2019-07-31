@@ -1,6 +1,6 @@
 ---
 layout: wiki
-title: 善用佳软
+title: 好的软件
 categories: Recommends
 description: 用正确的工具做对的事情
 keywords: 软件, 推荐
@@ -18,12 +18,7 @@ keywords: 软件, 推荐
 | 流程图                               | Visio          | ProcessOn.com     |
 | 文件查找                             | Everything     | Alfred            |
 | 文件内容查找                         | FileLocator    | Alfred            |
-| Android 开发                         | Android Studio | Android Studio    |
-| Android 虚拟机                       | Genymotion     | Genymotion        |
-| Android 当无线鼠标、键盘、远程桌面等 | [WiFi Mouse][] | [WiFi Mouse][]    |
 | 源码阅读                             | Source Insight | IDE/Vim           |
-| 笔记                                 | OneNote        | OneNote           |
-| 终端                                 | Cmder          | zsh               |
 | 视频播放器                           | QQ 影音        | mpv               |
 | 下载                                 | 迅雷精简版     | 迅雷              |
 | 录制屏幕生成 GIF                     | LICEcap        | LICEcap           |
