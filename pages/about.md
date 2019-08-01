@@ -10,9 +10,9 @@ permalink: /about/
 
 我是李玉祥，程序猿一枚。
 
-仰慕「优雅编码的艺术」。
-
 向往「随遇而安，平心静气」。
+
+相信「越努力越幸运」。
 
 ## 联系
 
@@ -20,7 +20,7 @@ permalink: /about/
 * {{ website.sitename }}：[@{{ website.name }}]({{ website.url }})
 {% endfor %}
 
-## Skill Keywords
+## 开发技能
 
 {% for category in site.data.skills %}
 <div class="btn-inline">
