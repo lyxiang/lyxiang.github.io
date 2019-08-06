@@ -27,6 +27,10 @@ List 是一个接口，它继承于 Collection 接口。常用的实现类有：
 * Vector 是线程同步的，也是线程安全的。
 * 如果集合中的元素的数目大于目前集合数组的长度时，Vector 扩容长度为目前数组长度的100%，而 Arraylist扩容长度为目前数组长度的50%。如果在集合中使用数据量比较大的数据，用vector有一定的优势。
 
+## SynchronizedList
+* SynchronizedList 是工具类包collections提供的一个线程安全的List包装类。
+* 利用 synchronized 关键字对List操作加锁，锁对象是自己本身。实现效率很低。
+
 ## 总结
 * 如果查找一个指定位置的数据，Vector 和 Arraylist 使用的时间是相同的，如果频繁的访问数据，这个时候使用Vector 和 Arraylist 都可以。
 * 如果需要频繁插入和删除元素，这个时候就应该考虑到使用 LinkedList, 因为它移动一个指定位置的数据时其它元素不移动。
