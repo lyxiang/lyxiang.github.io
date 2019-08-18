@@ -18,6 +18,10 @@ Cmd --> Command
 
 [Mac 键盘快捷键官方参考](https://support.apple.com/zh-cn/HT201236)
 
+## 系统
+* 隐藏／显示Dock：option+command+D
+*  强制退出应用： Command+Option+Esc  
+
 ## 窗口
 
 | 功能                   | 快捷键  |
@@ -30,17 +34,6 @@ Cmd --> Command
 | 关闭当前程序           | Cmd-Q   |
 | 新建标签               | Cmd-T   |
 | 新建窗口               | Cmd-N   |
-
-## 程序
-
-| 功能                | 快捷键     |
-|:--------------------|:-----------|
-| 打开 emoji 表情窗口 | C-Cmd- 空格 |
-| 打开 Spotlight      | C- 空格     |
-| 切换输入法          | Cmd- 空格   |
-| 打开 Alfred         | M- 空格     |
-| 打开 Finder 并查找  | C-M- 空格   |
-| 打开 Launchpad      | 四指合拢   |
 
 ## 命令行
 
@@ -124,15 +117,6 @@ Cmd --> Command
 | rmdir [dir]          | 移除目录 ( 仅限目录下没有内容时 ) |
 | rm -R [dir]          | 移除目录及内容                    |
 
-## 管道 - 连接多个带有输出的命令
-
-| 按键/命令 | 描述                             |
-|-----------|----------------------------------|
-| more      | 按当前窗口大小输出内容           |
-| > [file]  | 输出至指定文件, 注意文件将会覆盖 |
-| >> [file] | 在制定文件的末尾附加内容         |
-| <         | 从文件中读取内容                 |
-
 ## 帮助
 
 | 按键/命令        | 描述                   |
@@ -184,6 +168,9 @@ Cmd --> Command
   pwd|pbcopy
   ```
 
+## Chrome
+* 进入开发者模式  option+command+i
+
 ## Safari
 
 | 功能         | 快捷键           |
@@ -191,22 +178,6 @@ Cmd --> Command
 | 定位到地址栏 | Cmd-L            |
 | 切换标签     | Cmd-S-Left/Right |
 | 收藏页面     | Cmd-D            |
-
-## 保存 Safari 里正在播放的视频
-
-```sh
-$ su
-# cd /private/var/folders
-# ls
-nk zz
-# cd nk
-# ls
-zy3770994vqg83xvmbc9pd0m0000gn
-# cd zy3770994vqg83xvmbc9pd0m0000gn/T
-# open .
-```
-
-然后复制里面叫 FlashTmp.xxx 的文件，改名为 FlashTmp.flv。（操作过程中保持视频在播放状态）
 
 ## Terminal
 
@@ -216,65 +187,6 @@ zy3770994vqg83xvmbc9pd0m0000gn
 | 上 / 下个标签      | Cmd-{/} |
 | 删除光标前的输入 | C-U     |
 
-## WireShark
-
-使用 WireShark 1.99 开发版，可以不依赖于 X11，界面基于 Qt，更加美观，符合 Mac 界面风格。
-
-## 截图
-
-| 功能               | 快捷键         |
-|:-------------------|:---------------|
-| 全屏截图保存到桌面 | Cmd-S-3        |
-| 全屏截图并复制     | Cmd-C-S-3      |
-| 选区截图保存到桌面 | Cmd-S-4        |
-| 选区截图并复制     | Cmd-C-S-4      |
-| 窗口截图保存到桌面 | Cmd-S-4 空格   |
-| 窗口截图并复制     | Cmd-C-S-4 空格 |
-| QQ 截图            | Cmd-S-A        |
-
-### 去除窗口截图时的阴影
-
-```sh
-defaults write com.apple.screencapture disable-shadow -bool TRUE
-Killall SystemUIServer
-```
-
-如果要保留窗口截图时的阴影，则将 TRUE 改为 FALSE。
-
-### 调整选区大小
-
-使用选区模式选中一个区域并松开鼠标前，
-
-* 按住<kbd>空格</kbd>并移动鼠标，可以保持区域大小不变，并移动区域；
-* 按住<kbd>Shift</kbd>并移动鼠标，就可以保持区域的其它三个边不变，移动一个边的位置；
-* 按住<kbd>Alt</kbd>并移动鼠标，就可以对称的调整区域大小。
-
-### 截图标注
-
-使用预览工具可以完成截图标注。
-
-### 延时截图
-
-使用系统自带的 Grab 工具，运行后选择菜单的 Capture - Timed Screen。
-
-## iBooks 里的电子书保存路径
-
-`/Users/<username>/Library/Containers/com.apple.BKAgentService/Data/Documents/iBooks/Books`
-
-## 安装 mpv 没有图形界面
-
-使用 `brew options mpv` 可以看到有个 `--with-bundle` 是安装时创建 .app 文件。
-
-```sh
-brew install mpv --with-bundle
-brew linkapps mpv
-```
-
-## 屏幕取色
-
-使用 Mac 自带的“数码测色计”。
-
-## 参考
-
-* [你可能不知道的 Mac 技巧 - 截图，Gif 制作及 App 推荐](https://zhuanlan.zhihu.com/p/25154768)
-* [terminal-mac-cheatsheet](https://github.com/0nn0/terminal-mac-cheatsheet)
+## Finder
+* 显示/隐藏文件夹  Command+Shift+. 
+* 跳转文件夹  Command+Shift+G

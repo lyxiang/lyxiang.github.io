@@ -76,7 +76,7 @@ netstat -tunlp|grep 80
 * sudo -i: 为了频繁的执行某些只有超级用户才能执行的权限，而不用每次输入密码，可以使用该命令。提示输入密码时该密码为当前账户的密码。没有时间限制。执行该命令后提示符变为“#”而不是“$”。想退回普通账户时可以执行“exit”或“logout” 。
 
 ### ssh
-#### 链接服务器
+#### 连接服务器
 
 ```sh
 sudo -i ssh -p 22 name@host
@@ -88,3 +88,7 @@ sudo -i ssh -p 22 name@host
 ```sh
 ps -ef|grep nginx
 ```
+
+### tail
+* tail -n 100 filename: 查看日志，显示最后1000行
+* tail -f -n 100 filename：监视filename文件的尾部100行内容，动态输出在屏幕上
