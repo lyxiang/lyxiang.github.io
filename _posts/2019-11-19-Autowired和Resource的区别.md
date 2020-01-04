@@ -11,7 +11,7 @@ keywords: Autowired Resource
 
 @Autowired 是 Spring 的注解， org.springframework.beans.factory.annotation.Autowired。
 
-@resource 是 Java 自带的注解， javax.annotation.Resource。
+@Resource 是 Java 自带的注解， javax.annotation.Resource。
 
 @Autowired 是按照 byTepe 来注入的，需要按名字注入的话可以跟 @Qualifier 搭配使用
 
